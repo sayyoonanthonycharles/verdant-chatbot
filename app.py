@@ -63,8 +63,16 @@ def chat():
         reply = (
             result["candidates"][0]["content"]["parts"][0]["text"].strip()
         )
+    except requests.exceptions.HTTPError as exc:
+        status = exc.response.status_code if exc.response is not None else None
+        print(f"Gemini API error: {exc}")  # full details stay in server logs only
+        if status == 429:
+            reply = "I'm getting a lot of requests right now — please wait a moment and try again."
+        else:
+            reply = "Something went wrong talking to the model. Please try again shortly."
     except Exception as exc:
-        reply = f"Something went wrong talking to the model: {exc}"
+        print(f"Gemini API error: {exc}")  # full details stay in server logs only
+        reply = "Something went wrong talking to the model. Please try again shortly."
 
     return jsonify({"reply": reply})
 
