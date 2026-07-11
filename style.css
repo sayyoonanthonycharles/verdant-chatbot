@@ -105,9 +105,11 @@ body::before {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  height: 100dvh;
   max-width: 720px;
   margin: 0 auto;
   padding: 20px 16px;
+  padding-bottom: max(20px, env(safe-area-inset-bottom));
 }
 
 .app-header {
