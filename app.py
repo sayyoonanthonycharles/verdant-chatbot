@@ -12,7 +12,7 @@ app = Flask(__name__, static_folder=".", static_url_path="")
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
 GEMINI_URL = (
     "https://generativelanguage.googleapis.com/v1beta/models/"
-    "gemini-2.0-flash:generateContent"
+    "gemini-2.5-flash:generateContent"
 )
 
 SYSTEM_PROMPT = (
