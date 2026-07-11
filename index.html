@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verdant — AI Chat</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Ambient living background -->
+  <div class="veins" aria-hidden="true">
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="none">
+      <path class="vein vein-1" d="M-50,650 C200,600 350,750 600,680 C850,610 950,720 1250,650" />
+      <path class="vein vein-2" d="M-50,200 C250,150 300,300 600,250 C900,200 1000,80 1250,150" />
+      <path class="vein vein-3" d="M100,-50 C150,250 50,400 200,650 C300,850 400,750 350,850" />
+    </svg>
+  </div>
+  <div class="glow-orb orb-a" aria-hidden="true"></div>
+  <div class="glow-orb orb-b" aria-hidden="true"></div>
+
+  <div class="app">
+    <header class="app-header">
+      <div class="brand">
+        <span class="brand-mark">
+          <span class="pulse-core"></span>
+        </span>
+        <div class="brand-text">
+          <h1>Verdant</h1>
+          <p class="eyebrow">grown, not built</p>
+        </div>
+      </div>
+      <div class="status" id="status">
+        <span class="status-dot"></span>
+        <span id="statusText">online</span>
+      </div>
+    </header>
+
+    <main class="chat-shell">
+      <div class="chat-window" id="chatWindow">
+        <div class="msg bot">
+          <div class="avatar"><span class="pulse-core small"></span></div>
+          <div class="bubble">
+            <p>Hey, I'm Verdant. Ask me anything — I'm listening.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="typing-row" id="typingRow" hidden>
+        <div class="avatar"><span class="pulse-core small"></span></div>
+        <div class="bubble typing-bubble">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        </div>
+      </div>
+
+      <form class="composer" id="composerForm">
+        <input
+          type="text"
+          id="userInput"
+          placeholder="Type your message..."
+          autocomplete="off"
+          maxlength="2000"
+        />
+        <button type="submit" id="sendBtn" aria-label="Send message">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M4 12L20 4L14 20L11 13L4 12Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </form>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
